@@ -23,13 +23,4 @@ Route::GET('/login', function () {
     return view('loginForm');
 });
 Route::POST('/login', [UserController::class, 'login'])->name('login');
-Route::GET('/profile', function () {
-    return view('profile');
-})->name('profile');
-
-
-
-
-//GET /login stex forman a html erevum
-//POST /login stex login anelu hamar, successic heto redirect a linum /profile
-//GET /profile stex el output a anum welcome {username}
+Route::GET('/profile',[UserController::class,'profile'])->name('profile');
