@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{$userName}}{{session()->get('sessionLifeTime')}}</h1>
+<h1>{{$userName}}</h1>
 </body>
 </html>

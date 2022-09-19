@@ -3,6 +3,7 @@
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,11 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::POST('/login', [UserController::class, 'login'])->name('login');
 
-    Route::GET('/profile', function () {
+    Route::GET('/profile', function (Request $request) {
         if (session('lifeTime') + 60 <= Carbon::now()->timestamp) {
             Auth::logout();
             return redirect()->route('login');
         }
-        return view('profile');
+        return view('profile', ['userName' => $request->userName]);
     })->name('profile')->middleware('auth');
 });
