@@ -17,11 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-
-
-
-//GET /login stex forman a html erevum
-//POST /login stex login anelu hamar, successic heto redirect a linum /profile
-//GET /profile stex el output a anum welcome {username}
