@@ -77,6 +77,7 @@
 <h2>Login Form</h2>
 
 <form action="{{route('login')}}" method="post">
+    @csrf
     <div class="imgcontainer">
         <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
